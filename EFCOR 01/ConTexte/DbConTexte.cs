@@ -10,12 +10,14 @@ namespace EFCOR_01.ConTexte
     public class AddDbConTexte :DbContext 
 
     {
-      
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-           optionsBuilder.UseSqlServer ("Server = . ; Datebase = EFCore01 ; Trusted_Connection =true ; TrustedServerCertificate = true");
+            optionsBuilder.UseSqlServer("Server=ZIAD\\ZIAD;Database=Books;Trusted_Connection=True;TrustServerCertificate=True;");
         }
-        public DbSet<Product> Products { get;set; }
+        public DbSet<Book> Books { get;set; }
+        public DbSet<Author> Authors { get;set; }
+        public DbSet<Category> Categories { get;set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
